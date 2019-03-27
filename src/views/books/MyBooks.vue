@@ -23,6 +23,7 @@
   import API from '@/api/index.js'
   import store from '@/store'
   import bus from '@/api/bus.js'
+  // import BookInfo from './BookInfo.vue'
   export default {
     name: "MyBooks",
     data(){
@@ -56,8 +57,10 @@
     methods:{
       gotoBookInfo(book){
         console.log("卡片被点击了~")
+        // bus.$emit('click-book',book)
         sessionStorage.setItem('book',JSON.stringify(book))
         this.$router.push('/bookInfo')
+
       }
     },
     created() {

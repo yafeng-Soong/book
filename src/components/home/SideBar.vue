@@ -9,7 +9,7 @@
         >
           <el-menu-item index="/searchBooks">图书市场</el-menu-item>
           <el-menu-item index="/myBooks">我的书架</el-menu-item>
-          <el-menu-item >发布图书</el-menu-item>
+          <el-menu-item index="/publishBook">发布图书</el-menu-item>
           <el-menu-item >我的留言</el-menu-item>
           <el-menu-item >个人中心</el-menu-item>
         </el-menu>

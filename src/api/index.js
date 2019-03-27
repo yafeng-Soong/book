@@ -78,5 +78,10 @@ export default {
   getBookInfo(params){
     return new methodGet('book/selectWithComments',{bookId:params})
   },
-
+  publishBook(params){
+    return new methodPost('book/publish',params)
+  },
+  uploadBookImgs(params){
+    return new methodPost('upload/books',params)
+  }
 }

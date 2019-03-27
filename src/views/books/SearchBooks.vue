@@ -13,6 +13,9 @@
         <el-option label="小说" value="小说"></el-option>
         <el-option label="艺术" value="艺术"></el-option>
         <el-option label="经济" value="经济"></el-option>
+        <el-option label="文学" value="文学"></el-option>
+        <el-option label="杂志" value="杂志"></el-option>
+        <el-option label="其他" value="其他"></el-option>
       </el-select>
       <el-button slot="append" icon="el-icon-search" @click="selectBook"></el-button>
       <template slot-scope="{ item }">

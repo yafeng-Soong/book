@@ -49,6 +49,12 @@ export default new Router({
           name: 'BookInfo',
           component: resolve => require(['@/views/books/BookInfo'],resolve),
           meta:{title:'图书详情'}
+        },
+        {
+          path: '/publishBook',
+          name: 'PublishBook',
+          component: resolve => require(['@/views/books/PublishBook'],resolve),
+          meta:{title:'发布图书'}
         }
       ]
     }

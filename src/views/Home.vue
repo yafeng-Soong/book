@@ -32,7 +32,7 @@
       }
     },
     created(){
-
+      this.$message.success("登录成功！")
     },
     watch:{
       '$route'(to,from){

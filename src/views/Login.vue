@@ -1,5 +1,5 @@
 <template>
-  <div class="bg">
+  <div class="bg"  v-loading="loading" element-loading-background="rgba(0, 0, 0, 0.6)">
     <!--<div class="loginContent">-->
       <el-form class="loginForm">
         <img src="@/assets/logo.png" width="90" height="90"/>
@@ -30,30 +30,34 @@
         userData:{
           email:'',
           pwd:'',
-        }
+        },
+        loading:false
       }
     },
     methods:{
       login(){
+        this.loading = true
         let that = this
         API.login(Qs.stringify(that.userData))
           .then(res => {
             if (res.code === '103'){
-              that.$message.success("~请稍等~")
+              // that.$message.success("~请稍等~")
               console.log('当前登录用户：'+ that.userData.email)
               store.commit('SET_USERINFO',{email:that.userData.email})
               store.dispatch('setUserInfo',that.userData.email)
-              // that.$router.replace("/home")
               setTimeout(() => {
+                that.loading = false
                 that.$router.replace('/home');
               }, 1500)
             }else {
               console.log(res.msg)
+              that.loading = false
               that.$message.error(res.msg)
             }
           })
           .catch(err => {
             console.log(err)
+            that.loading = false
             that.$message.error(err.toString())
           })
       }
